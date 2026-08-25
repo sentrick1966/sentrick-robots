@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://sentrickrobots.com/sitemap.xml
+# Sentrick Robots — a product line of Anima Technology

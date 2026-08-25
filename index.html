@@ -166,9 +166,9 @@
     <h2>Simple recurring pricing</h2>
     <p class="sub">One monthly plan per robot — subscribe online and go live. Or start with a paid pilot, then scale. Volume pricing available for multi-site fleets.</p>
     <div class="grid g3">
-      <div class="price"><h3>Pilot</h3><div class="amt">Paid pilot <small>/ 30–60 days</small></div><p style="color:var(--muted)">Prove it on one real site before you commit.</p><ul><li>1 robot, 1 site</li><li>AI detection + live view</li><li>Cloud dashboard access</li><li>Hands-on setup support</li></ul><a href="#contact" class="btn ghost" style="width:100%">Start a pilot</a></div>
-      <div class="price featured"><h3>Standard</h3><div class="amt">$49.99 <small>/ mo · per robot</small></div><p style="color:var(--muted)">The core patrol subscription.</p><ul><li>AI detection + alerts</li><li>Autonomous patrol routes</li><li>Patrol record & storage</li><li>Unified Sentrick dashboard</li></ul><button class="btn" style="width:100%" data-sentrick-buy data-price="price_1U1vtlFVKRkmkzoWqtw4ToG3" data-name="Sentrick Robots — per robot / month" data-amount="$49.99" data-recurring="true">Subscribe — $49.99/mo</button></div>
-      <div class="price"><h3>Fleet</h3><div class="amt">Custom <small>/ multi-site</small></div><p style="color:var(--muted)">Multiple robots and sites, one account.</p><ul><li>Volume subscription pricing</li><li>Multi-site management</li><li>Priority support</li><li>Custom integrations</li></ul><a href="#contact" class="btn ghost" style="width:100%">Talk to us</a></div>
+      <div class="price"><h3>Pilot</h3><div class="amt">Paid pilot <small>/ 30–60 days</small></div><p style="color:var(--muted)">Prove it on one real site before you commit.</p><ul><li>Guided setup on one site</li><li>AI detection + live view</li><li>Cloud dashboard access</li><li>Hands-on setup support</li></ul><a href="#contact" class="btn ghost" style="width:100%">Start a pilot</a></div>
+      <div class="price featured" data-plan-card="robots_starter"><h3>Robots Starter</h3><div class="amt" data-plan-price>$29.99 <small>/ mo</small></div><p style="color:var(--muted)">The core patrol subscription.</p><ul><li>AI detection + alerts</li><li>Operations log & status monitoring</li><li>1 robot, 3 users, 1 site</li><li>Unified Sentrick dashboard</li></ul><button class="btn" style="width:100%" data-sentrick-buy data-plan="robots_starter" data-name="Robots Starter (monthly)" data-amount="$29.99" data-recurring="true">Subscribe — $29.99/mo</button></div>
+      <div class="price"><h3>Fleet</h3><div class="amt">Custom <small>/ multi-site</small></div><p style="color:var(--muted)">Multiple robots and sites, one account.</p><ul><li>Volume subscription pricing</li><li>Multi-site management</li><li>Custom integrations</li></ul><a href="#contact" class="btn ghost" style="width:100%">Talk to us</a></div>
     </div>
   </div>
 </section>
@@ -193,7 +193,7 @@
    1) Duplicate one product card (the div marked PRODUCT CARD) per product.
    2) Set <img src> to the product photo + alt text.
    3) Fill Name, one-line Description, Price.
-   4) On the <button>: set data-price="<Stripe price ID>", data-name, data-amount, data-recurring ("false"=one-time, "true"=subscription).
+   4) On the <button>: for a SUBSCRIPTION set data-plan="<catalog plan_key>" and data-recurring="true" (never a price ID - the server resolves the price). For one-time HARDWARE set data-price="<Stripe price ID>" and data-recurring="false".
    5) Remove  style="display:none"  from the <section id="products"> below to go live (and add a nav link to #products).
   Buttons already use the live Sentrick cart.js -> Stripe checkout. Full guide: Sentrick_Products_HowTo.md
 ================================================================================================================= -->
@@ -203,15 +203,12 @@
     <h2 style="margin:0 0 8px">Our devices</h2>
     <p style="opacity:.75;max-width:640px;margin:0 0 26px">Own your hardware in one secure checkout, powered by the Sentrick cloud.</p>
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px">
-      <!-- PRODUCT CARD (copy this whole block per product) -->
+            <!-- PRODUCT CARD (hardware not yet available — honest Coming Soon / Request a Pilot; NO price, NO checkout, no data-sentrick-buy so cart.js never binds) -->
       <div style="border:1px solid rgba(128,128,128,.22);border-radius:16px;padding:18px;display:flex;flex-direction:column">
-        <div style="aspect-ratio:4/3;background:rgba(128,128,128,.10);border-radius:12px;overflow:hidden;margin-bottom:14px">
-          <img src="" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block">
-        </div>
-        <h3 style="margin:0 0 6px">Product name</h3>
-        <p style="opacity:.8;font-size:.95rem;margin:0 0 12px;flex:1">Short one-line description.</p>
-        <div style="font-weight:800;font-size:1.3rem;margin-bottom:12px">$0.00</div>
-        <button class="btn" data-sentrick-buy data-price="STRIPE_PRICE_ID" data-name="Product name" data-amount="$0.00" data-recurring="false" style="width:100%">Buy — $0.00</button>
+        <div style="aspect-ratio:4/3;background:rgba(128,128,128,.10);border-radius:12px;overflow:hidden;margin-bottom:14px"></div>
+        <h3 style="margin:0 0 6px">Coming Soon</h3>
+        <p style="opacity:.8;font-size:.95rem;margin:0 0 12px;flex:1">Sentrick hardware for this line isn’t available for purchase yet. Pilots are available on request.</p>
+        <a href="mailto:info@animatechusa.com?subject=Request%20a%20Pilot" class="btn ghost" style="width:100%;text-align:center;text-decoration:none;box-sizing:border-box">Request a Pilot</a>
       </div>
       <!-- END PRODUCT CARD -->
     </div>
@@ -222,7 +219,7 @@
   <div class="wrap foot">
     <div>
       <div class="brand" style="margin-bottom:10px"><span class="dot">S</span> Sentrick Robots™</div>
-      <div>A product line of Anima Technology: Sensor &amp; Tracking Solutions, LLC · Houston, TX</div>
+      <div>A product line of Anima Technology Sensor &amp; Tracking Solutions, LLC · Houston, TX</div>
       <div style="margin-top:10px">
         <a class="pill" href="https://www.sentrickshield.com">Sentrick Shield™</a><a class="pill" href="https://www.sentrickfleet.com">Sentrick Fleet™</a><a class="pill" href="https://www.sentrickcargo.com">Sentrick Cargo™</a><a class="pill" href="https://www.sentrickindustrial.com">Sentrick Industrial™</a><a class="pill" href="https://www.sentrickdrones.com">Sentrick Drones™</a>
         <div style="margin-top:12px"><a href="https://www.sentrickapp.com" style="color:var(--accent2);font-weight:600">One Sentrick platform — one cloud, one login, one bill →</a></div>

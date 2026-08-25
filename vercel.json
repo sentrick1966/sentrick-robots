@@ -1,0 +1,11 @@
+{
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "www.sentrickrobots.com" }],
+      "destination": "https://sentrickrobots.com/:path*",
+      "permanent": true
+    }
+  ]
+}
